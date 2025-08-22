@@ -68,27 +68,27 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-800 via-green-600 to-green-400 overflow-hidden">
-        {/* Fundo animado com partículas e blobs */}
+      <section className="relative bg-gradient-to-br from-green-900 via-green-700 to-green-500 overflow-hidden">
+        {/* Fundo animado com partículas */}
         <div className="absolute inset-0">
-          <svg className="w-full h-full animate-pulse-slow" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-            <circle cx="150" cy="200" r="120" fill="rgba(255,255,255,0.08)">
-              <animate attributeName="r" values="120;140;120" dur="8s" repeatCount="indefinite" />
+          <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+            <circle cx="100" cy="150" r="100" fill="rgba(255,255,255,0.05)">
+              <animate attributeName="r" values="100;130;100" dur="12s" repeatCount="indefinite" />
             </circle>
-            <circle cx="650" cy="350" r="150" fill="rgba(255,255,255,0.06)">
-              <animate attributeName="r" values="150;180;150" dur="10s" repeatCount="indefinite" />
+            <circle cx="700" cy="400" r="150" fill="rgba(255,255,255,0.04)">
+              <animate attributeName="r" values="150;180;150" dur="15s" repeatCount="indefinite" />
             </circle>
           </svg>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col md:flex-row items-center justify-between">
           {/* Texto principal */}
-          <div className="text-center md:text-left md:max-w-xl space-y-6">
+          <div className="text-center md:text-left md:max-w-xl space-y-6 z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
               Formulários <span className="text-green-300">Inteligentes</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 drop-shadow-sm">
-              Crie formulários de pré-atendimento para sua empresa, capture leads qualificados, filtre informações e envie direto para o WhatsApp.
+              Crie formulários personalizados para pré-atendimento, capture leads qualificados, filtre informações e envie direto para o WhatsApp.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mt-4">
               <a
@@ -110,24 +110,59 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Ilustração futurista abstrata */}
-          <div className="mt-12 md:mt-0 md:ml-12 flex justify-center md:justify-end relative w-full max-w-lg h-80">
-            {/* Blobs animados */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-500 via-green-400 to-green-200 animate-blob mix-blend-multiply filter blur-3xl opacity-60"></div>
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-400 via-green-300 to-green-100 animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl opacity-50"></div>
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tl from-green-200 via-white to-green-300 animate-blob animation-delay-4000 mix-blend-multiply filter blur-2xl opacity-40"></div>
-            {/* Linhas futuristas */}
-            <div className="absolute top-0 left-0 w-full h-full">
-              <svg className="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L200 200" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-                <path d="M0 200 L200 0" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-                <circle cx="50" cy="150" r="2" fill="white" className="animate-ping-slow" />
-                <circle cx="150" cy="50" r="2" fill="white" className="animate-ping-slow animation-delay-2000" />
-              </svg>
+          {/* Área direita com ilustração e card */}
+          <div className="mt-12 md:mt-0 md:ml-12 relative w-full max-w-lg h-96 flex justify-center items-center">
+            {/* Blobs neon animados */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-400 via-green-300 to-green-200 animate-blob mix-blend-multiply filter blur-3xl opacity-60"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-300 via-green-200 to-white animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl opacity-50"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tl from-white via-green-100 to-green-200 animate-blob animation-delay-4000 mix-blend-multiply filter blur-2xl opacity-40"></div>
+
+            {/* Linhas conectando pontos */}
+            <svg className="w-full h-full absolute" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="0" x2="200" y2="200" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
+              <line x1="0" y1="200" x2="200" y2="0" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
+              <circle cx="50" cy="150" r="3" fill="white" className="animate-ping-slow" />
+              <circle cx="150" cy="50" r="3" fill="white" className="animate-ping-slow animation-delay-2000" />
+              <circle cx="100" cy="100" r="4" fill="white" className="animate-ping-slower" />
+            </svg>
+
+            {/* Cubos/elementos 3D abstratos */}
+            <div className="absolute w-16 h-16 bg-green-400/50 rounded-lg animate-float top-10 left-10 shadow-lg"></div>
+            <div className="absolute w-12 h-12 bg-green-300/60 rounded-lg animate-float animation-delay-1500 top-24 right-16 shadow-md"></div>
+            <div className="absolute w-20 h-20 bg-green-200/40 rounded-lg animate-float animation-delay-3000 bottom-10 left-20 shadow-lg"></div>
+
+            {/* Card futurista com CTA detalhado */}
+            <div className="absolute top-8 right-4 bg-black/80 backdrop-blur-md border border-green-400 rounded-xl p-6 max-w-xs text-white shadow-xl animate-fade-in">
+              <h3 className="text-xl font-bold text-green-400 mb-2">Impulsione seu Pré-Atendimento</h3>
+              <p className="text-sm text-white/90 mb-3">
+                Aumente a eficiência do seu atendimento automatizando formulários, filtrando leads e integrando tudo diretamente ao WhatsApp.
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-400" />
+                  Capture leads qualificados automaticamente
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-400" />
+                  Filtre informações de forma inteligente
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-400" />
+                  Envio direto e rápido para o WhatsApp
+                </li>
+              </ul>
+              <button
+                onClick={() => document.getElementById("servico")?.scrollIntoView({ behavior: "smooth" })}
+                className="mt-4 inline-block px-4 py-2 bg-green-400 text-black rounded-full font-semibold hover:bg-green-300 transition transform hover:scale-105 duration-300"
+              >
+                Saiba Mais
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+
 
       {/* Service Section */}
       <section id="servico" className="py-16 bg-gray-50">
