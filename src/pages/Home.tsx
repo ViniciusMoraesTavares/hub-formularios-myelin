@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  FileText, 
-  ExternalLink, 
-  ArrowRight, 
-  CheckCircle, 
-  Users, 
+import {
+  FileText,
+  ExternalLink,
+  ArrowRight,
+  CheckCircle,
+  Users,
   Zap,
   Globe
 } from 'lucide-react';
@@ -68,84 +68,130 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Formulários que
-              <span className="block text-blue-300">Convertem</span>
+      <section className="relative bg-gradient-to-br from-green-800 via-green-600 to-green-400 overflow-hidden">
+        {/* Fundo animado com partículas e blobs */}
+        <div className="absolute inset-0">
+          <svg className="w-full h-full animate-pulse-slow" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+            <circle cx="150" cy="200" r="120" fill="rgba(255,255,255,0.08)">
+              <animate attributeName="r" values="120;140;120" dur="8s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="650" cy="350" r="150" fill="rgba(255,255,255,0.06)">
+              <animate attributeName="r" values="150;180;150" dur="10s" repeatCount="indefinite" />
+            </circle>
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col md:flex-row items-center justify-between">
+          {/* Texto principal */}
+          <div className="text-center md:text-left md:max-w-xl space-y-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
+              Formulários <span className="text-green-300">Inteligentes</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Criamos soluções personalizadas de formulários que transformam visitantes em clientes. 
-              Explore nossa galeria de modelos e veja o que podemos fazer pelo seu negócio.
+            <p className="text-lg md:text-xl text-white/80 drop-shadow-sm">
+              Crie formulários de pré-atendimento para sua empresa, capture leads qualificados, filtre informações e envie direto para o WhatsApp.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mt-4">
               <a
                 href="https://wa.me/5519996165594"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium text-lg"
+                className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all duration-300 font-semibold text-base shadow-md transform hover:-translate-y-1"
               >
-                <span>Falar com Especialista</span>
-                <ExternalLink className="ml-2" size={20} />
+                Fale com Especialista
+                <ExternalLink className="ml-2" size={18} />
               </a>
               <button
-                onClick={() => document.getElementById('modelos')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-700 transition-colors font-medium text-lg"
+                onClick={() => document.getElementById("modelos")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-green-700 transition-all duration-300 font-semibold text-base shadow-md transform hover:-translate-y-1"
               >
-                <span>Ver Modelos</span>
-                <ArrowRight className="ml-2" size={20} />
+                Ver Modelos
+                <ArrowRight className="ml-2" size={18} />
               </button>
             </div>
           </div>
+
+          {/* Ilustração futurista abstrata */}
+          <div className="mt-12 md:mt-0 md:ml-12 flex justify-center md:justify-end relative w-full max-w-lg h-80">
+            {/* Blobs animados */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-500 via-green-400 to-green-200 animate-blob mix-blend-multiply filter blur-3xl opacity-60"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-400 via-green-300 to-green-100 animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl opacity-50"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tl from-green-200 via-white to-green-300 animate-blob animation-delay-4000 mix-blend-multiply filter blur-2xl opacity-40"></div>
+            {/* Linhas futuristas */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              <svg className="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L200 200" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
+                <path d="M0 200 L200 0" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
+                <circle cx="50" cy="150" r="2" fill="white" className="animate-ping-slow" />
+                <circle cx="150" cy="50" r="2" fill="white" className="animate-ping-slow animation-delay-2000" />
+              </svg>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16">
+      {/* Service Section */}
+      <section id="servico" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Título */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Por que escolher a Myelin?
+              Serviço de Pré-Atendimento
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Especialistas em criar experiências de formulário que engajam e convertem
+              Criamos formulários de pré-atendimento para empresas e prestadores de serviço,
+              permitindo que os clientes preencham suas informações iniciais de forma rápida e prática.
+              Receba os dados direto no WhatsApp e agilize o atendimento.
             </p>
           </div>
 
+          {/* Benefícios */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-white rounded-xl shadow hover:shadow-lg transition-shadow">
               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4">
                 <Zap className="h-8 w-8 text-blue-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Conversão Otimizada</h3>
+              <h3 className="text-xl font-semibold mb-2">Agilidade no Atendimento</h3>
               <p className="text-gray-600">
-                Formulários projetados para maximizar taxa de conversão e reduzir abandono
+                Receba os dados do cliente completos antes do contato, economizando tempo e evitando retrabalho.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-white rounded-xl shadow hover:shadow-lg transition-shadow">
               <div className="bg-green-100 rounded-full p-4 w-16 h-16 mx-auto mb-4">
                 <Users className="h-8 w-8 text-green-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">UX Personalizada</h3>
+              <h3 className="text-xl font-semibold mb-2">Filtragem de Clientes</h3>
               <p className="text-gray-600">
-                Interface intuitiva adaptada ao seu público e marca
+                Apenas clientes realmente interessados preenchem o formulário, ajudando em campanhas e leads qualificados.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-white rounded-xl shadow hover:shadow-lg transition-shadow">
               <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-4">
                 <Globe className="h-8 w-8 text-purple-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Responsivo Total</h3>
+              <h3 className="text-xl font-semibold mb-2">Integração WhatsApp</h3>
               <p className="text-gray-600">
-                Funciona perfeitamente em todos os dispositivos e telas
+                Todas as informações coletadas chegam prontas no WhatsApp da empresa, prontas para ação imediata.
               </p>
             </div>
           </div>
+
+          {/* Call to Action */}
+          <div className="mt-12 text-center">
+            <a
+              href="https://wa.me/5519996165594"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium text-lg"
+            >
+              <span>Fale com um Especialista</span>
+              <ExternalLink className="ml-2" size={20} />
+            </a>
+          </div>
         </div>
       </section>
+
 
       {/* External Examples */}
       <section className="bg-white py-16">
@@ -174,9 +220,9 @@ const Home: React.FC = () => {
                       <h3 className="text-2xl font-bold mb-2">{example.title}</h3>
                       <p className="text-white/90">{example.description}</p>
                     </div>
-                    <ExternalLink 
-                      className="opacity-70 group-hover:opacity-100 transition-opacity" 
-                      size={24} 
+                    <ExternalLink
+                      className="opacity-70 group-hover:opacity-100 transition-opacity"
+                      size={24}
                     />
                   </div>
                   <div className="flex items-center text-white/90 group-hover:text-white transition-colors">
@@ -238,7 +284,7 @@ const Home: React.FC = () => {
           <p className="text-xl mb-8 text-blue-100">
             Entre em contato conosco e vamos criar a solução perfeita para seu negócio
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <div className="flex items-center justify-center">
               <CheckCircle className="mr-2" size={20} />
