@@ -5,6 +5,7 @@ export default {
     extend: {
       animation: {
         blob: "blob 7s infinite",
+        blob: "blob 8s infinite",
         "ping-slow": "ping 4s linear infinite",
         "ping-slower": "ping 8s linear infinite",
         float: "float 6s ease-in-out infinite",

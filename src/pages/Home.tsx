@@ -52,7 +52,7 @@ const Home: React.FC = () => {
 
   const externalExamples = [
     {
-      title: 'Algodoce & Salgado',
+      title: 'Algo doce e Salgado',
       description: 'Formulário de orçamento para eventos',
       url: 'https://algodoceesalgado.com.br/formulario',
       color: 'bg-gradient-to-r from-pink-500 to-rose-500'
@@ -241,32 +241,62 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {externalExamples.map((example, index) => (
-              <a
-                key={index}
-                href={example.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <div className={`${example.color} p-8 rounded-xl text-white hover:scale-105 transition-transform duration-300`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">{example.title}</h3>
-                      <p className="text-white/90">{example.description}</p>
+            {externalExamples.map((example, index) => {
+              const isAlgoDoce = example.title.includes("Algo doce");
+              const isAmanda = example.title.includes("Amanda");
+
+              return (
+                <a
+                  key={index}
+                  href={example.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block relative rounded-xl overflow-hidden"
+                >
+                  {/* Fundo animado com blobs/partículas */}
+                  <div className="absolute inset-0">
+                    {isAlgoDoce && (
+                      <>
+                        <div className="absolute w-40 h-40 bg-yellow-400/40 rounded-full top-[-20px] left-[-20px] animate-blob"></div>
+                        <div className="absolute w-32 h-32 bg-white/30 rounded-full top-20 right-[-10px] animate-blob animation-delay-2000"></div>
+                        <div className="absolute w-48 h-48 bg-yellow-300/20 rounded-full bottom-[-20px] left-10 animate-blob animation-delay-4000"></div>
+                      </>
+                    )}
+                    {isAmanda && (
+                      <>
+                        <div className="absolute w-40 h-40 bg-pink-400/30 rounded-full top-[-20px] left-[-20px] animate-blob"></div>
+                        <div className="absolute w-32 h-32 bg-rose-400/30 rounded-full top-20 right-[-10px] animate-blob animation-delay-2000"></div>
+                        <div className="absolute w-48 h-48 bg-pink-200/20 rounded-full bottom-[-20px] left-10 animate-blob animation-delay-4000"></div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Card conteúdo */}
+                  <div
+                    className={`relative z-10 p-8 rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105 ${isAlgoDoce
+                        ? "bg-gradient-to-tr from-yellow-400 via-white to-yellow-200 text-black border border-yellow-400"
+                        : "bg-gradient-to-tr from-pink-400 via-rose-400 to-pink-200 text-white border border-rose-400"
+                      }`}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-2">{example.title}</h3>
+                        <p className="text-sm">{example.description}</p>
+                      </div>
+                      <ExternalLink
+                        className="opacity-70 group-hover:opacity-100 transition-opacity"
+                        size={24}
+                      />
                     </div>
-                    <ExternalLink
-                      className="opacity-70 group-hover:opacity-100 transition-opacity"
-                      size={24}
-                    />
+
+                    <div className="flex items-center mt-4 text-current group-hover:text-current">
+                      <span className="font-medium">Ver projeto ao vivo</span>
+                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+                    </div>
                   </div>
-                  <div className="flex items-center text-white/90 group-hover:text-white transition-colors">
-                    <span className="font-medium">Ver projeto ao vivo</span>
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-                  </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
